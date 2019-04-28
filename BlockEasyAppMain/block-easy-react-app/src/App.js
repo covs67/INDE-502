@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
-function App() {
+
+class App extends Component {
+render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -22,5 +26,8 @@ function App() {
     </div>
   );
 }
+}
+
+
 
 export default App;
