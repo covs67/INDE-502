@@ -11,6 +11,7 @@ return(
   <AppBar position="static" color="default">
         <div style={{height:'50%',width:'50%',marginTop:'5px'}}>
        <h1>Login</h1>
+       <img></img>
        </div>
   </AppBar>
    </div>
