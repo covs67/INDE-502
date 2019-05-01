@@ -1,5 +1,7 @@
 import React,{ Component } from 'react';
-import {AppBar, TextField, Button} from '@material-ui/core/';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {AppBar, Button} from '@material-ui/core/';
+import {TextField} from 'material-ui';
 
 class Create extends Component {
 
@@ -20,14 +22,16 @@ class Create extends Component {
   //To store the errors
   const errors={}
   var nameVer =  new RegExp(/[a-zA-Z]$/);
-  var emailVer=nameVer.test(String(this.state.Name))
-
+  var nameVer=nameVer.test(String(this.state.Name))
+ //alert(nameVer)
   var re =  new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   var emailVer=re.test(String(this.state.Email).toLowerCase())
   //alert (emailVer)
   var strongRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
   var PassVer=strongRegex.test(String(this.state.Password))
-  var PassVer=strongRegex.test(String(this.state.Password2))
+  //alert(PassVer)
+  var PassVer2=strongRegex.test(String(this.state.Password2))
+
 
 
 
@@ -46,7 +50,20 @@ class Create extends Component {
     errors.password_error="Password is invalid, Re-enter."
     flagInvalid=true
   }
+
+  if (this.state.Password === this.state.Password2) {
+   PassVer2 = true;
+  }
+  else {
+    //PassVer2 = false;
+    flagInvalid = true;
+    errors.password2_error="Password Mismatch. Please make sure both passwords match before proceeding."
+    alert("in else block")
+  }
+  
+  //alert(flagInvalid)
   //Set messages if data is incorrect showing user errors
+
     if(flagInvalid==true){
       event.preventDefault();
       this.setState({
@@ -61,31 +78,33 @@ class Create extends Component {
 render() {
 return(
   <div>
+    <MuiThemeProvider>
     <AppBar position="static" color="default">
       <div style={{height:'50%',width:'50%',marginTop:'5px'}}>
         <h1>Create</h1>
       </div>
+      
     </AppBar>
 <center>
   <img src={require('./images/blockeasy.JPG')} style={{marginTop:'2%'}}>
   </img>
   <div style={{alignItems:'space-between'}}>
-  <TextField label='Name' style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Name' errorText={this.state.name_error} style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Name:event.target.value
 })
  }}/>
   <br/>
-  <TextField label='Email address' style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Email address' errorText={this.state.email_error} style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Email:event.target.value
 })
  }}/>
   <br/>
-  <TextField label='Password' style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Password' errorText={this.state.password_error} style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Password:event.target.value
 })
  }}/>
   <br/>
-  <TextField label='Password' type='Password2' type='Password' style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Password' errorText={this.state.password2_error} type='Password2' type='Password' style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Password2:event.target.value
 })
  }} />
@@ -96,6 +115,7 @@ this.setState({Password2:event.target.value
   <Button variant='contained' colour='primary'>Cancel</Button>
   </div>
 </center>
+</MuiThemeProvider>
   </div>);
   }
 }
