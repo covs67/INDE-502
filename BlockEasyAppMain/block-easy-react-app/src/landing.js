@@ -20,17 +20,19 @@ render() {
     }
 
     const button_style ={
-        height:'50%',
-        width:'50%',
+        fontSize : '20px',
+        fontWeight:'bold', 
+        color:'black',
+
     }
     
 return(<div>
         <AppBar>
-            <img src={require('./images/blockeasy.JPG')} style={{marginTop:'', height:'10%', width:'15%'}} />
-            <Button variant="contained" colour="" style={{button_style}}>Start Learning</Button>
-            <Button variant="contained" colour="" style={{button_style}}>Challenge Yourself</Button>
-            <Button variant="contained" colour="" style={{button_style}}>About</Button>
-            <Button variant="contained" colour="" style={{button_style}}>Contact</Button>
+            <img src={require('./images/blockeasy.JPG')} style={{marginTop:'2vh', height:'8vh', width:'15%'}} />
+            <Button variant="contained" colour="inherit" style={{button_style}}>Start Learning</Button>
+            <Button variant="contained" colour="inherit" style={{button_style}}>Challenge Yourself</Button>
+            <Button variant="contained" colour="inherit" style={{button_style}}>About</Button>
+            <Button variant="contained" colour="inherit" style={{button_style}}>Contact</Button>
         </AppBar>
         <div style={home_style}><Button variant="contained" colour=""></Button>
         </div>
