@@ -50,10 +50,10 @@ render() {
 return(
   <div>
    <MuiThemeProvider>
-  <AppBar position="static" color="default">
-        <div style={{height:'50%',width:'50%',marginTop:'5px'}}>
+    <AppBar position="static" color="default">
+      <div style={{height:'50%',width:'50%',marginTop:'5px'}}>
        <h1>Login</h1>
-       </div>
+   </div>
   </AppBar>
   <center>
   <img src = {img} style={{marginTop:'2%'}}
@@ -81,7 +81,7 @@ this.setState({Password:event.target.value
 
   </center>
   </MuiThemeProvider>
-   </div>
+  </div>
 
 
 );
