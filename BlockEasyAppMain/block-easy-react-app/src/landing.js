@@ -5,6 +5,8 @@ import { EditorFormatAlignCenter } from 'material-ui/svg-icons';
 import centerFocusStrong from 'material-ui/svg-icons/image/center-focus-strong';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
 import color from '@material-ui/core/colors/indigo';
+import router from 'material-ui/svg-icons/hardware/router';
+import Home from './Home';
 
 
 class Landing extends Component {
@@ -36,7 +38,24 @@ return(<div>
             <Button variant="raisedPrimary" colour="inherit" style={button_style}>Contact</Button>
             </Toolbar>
         </AppBar>
+      <Router>
+          <Switch>
+          <Route exact path='/Landing' component={Home} />
+            {/* <Route exact path='/Landing' component={Landing} />
+            <Route exact path='/Home' component={Home} />
+            <Route path='/create' component={Create} /> */}
+              </Switch>
+      </Router>
+      <div>
 
+      <p style={{float:'left', marginLeft:'1%'}}>&copy; Copyright 2019. Blockeasy. All rights Reserved.</p>
+      <div id="social_images" style={{marginLeft:'90%'}}>
+      <img src={require('./images/fb.ico')} style={{height:'40%', width:'20%'}}/>
+      <img src={require('./images/insta.ico')} style={{height:'40%', width:'20%'}}/>
+      <img src={require('./images/twitter.ico')} style={{height:'40%', width:'20%'}}/>
+      <img src={require('./images/yt.ico')} style={{height:'40%', width:'20%'}}/>
+      </div>
+      </div>
         
        </div>
     

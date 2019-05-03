@@ -89,6 +89,10 @@ class Home extends Component {
         <p style={{width:'30%', float:'right', marginRight:'15%', marginTop:'5%'}}><h3>Fun Challenge Questions and Answers</h3>This is one of our best features and the description for it. This is one of our best features and the description for it. </p>
         <img src={require('./images/idea2.JPG')} style={{float:'left', marginLeft:'10%'}}/>
         </div>
+        <div style={{background:'linear-gradient(45deg, #6600FF 30%, #37008A 90%)', height:'25vh' }}>
+        <p style={{color:'white', fontSize:'50px', marginTop:'10px'}}>Make A Start</p>
+        <p style={{color:'white', fontSize:'20px'}}>It’s not just about training. It’s about progress. A platform that allows you to take control of your career by learning the right skills at the right time.</p>
+        </div>
         </center>
 </div>
         )
