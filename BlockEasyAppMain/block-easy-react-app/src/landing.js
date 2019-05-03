@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Background from './images/center.bmp';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
 import About from './About';
+import Start_Learning from './Start_Learning';
 
 class Landing extends Component {
 render() {
@@ -35,7 +36,8 @@ return(<div>
         </AppBar>
       <Router>
           <Switch>
-          <Route exact path='/Landing' component={About} />
+          <Route exact path='/Landing' component={Start_Learning} />
+          <Route exact path='/Start_Learning' component={Start_Learning}/>
           {/* <Route exact path='/About' component={About} /> */}
             {/* <Route exact path='/Landing' component={Landing} />
             <Route exact path='/Home' component={Home} />
