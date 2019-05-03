@@ -91,7 +91,9 @@ class Home extends Component {
         </div>
         <div style={{background:'linear-gradient(45deg, #6600FF 30%, #37008A 90%)', height:'25vh' }}>
         <p style={{color:'white', fontSize:'50px', marginTop:'10px'}}>Make A Start</p>
+        
         <p style={{color:'white', fontSize:'20px'}}>It’s not just about training. It’s about progress. A platform that allows you to take control of your career by learning the right skills at the right time.</p>
+        <Button variant='Raised' color='primary' style={{borderRadius:'25px', backgroundColor:'white', height:'5vh', width:'20vh', marginBottom:'10px'}}>Start Now</Button>
         </div>
         </center>
 </div>

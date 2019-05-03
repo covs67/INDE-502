@@ -6,7 +6,8 @@ import centerFocusStrong from 'material-ui/svg-icons/image/center-focus-strong';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
 import color from '@material-ui/core/colors/indigo';
 import router from 'material-ui/svg-icons/hardware/router';
-import Home from './Home';
+import About from './About';
+
 
 
 class Landing extends Component {
@@ -40,7 +41,8 @@ return(<div>
         </AppBar>
       <Router>
           <Switch>
-          <Route exact path='/Landing' component={Home} />
+          <Route exact path='/Landing' component={About} />
+          {/* <Route exact path='/About' component={About} /> */}
             {/* <Route exact path='/Landing' component={Landing} />
             <Route exact path='/Home' component={Home} />
             <Route path='/create' component={Create} /> */}
