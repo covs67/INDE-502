@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import Background from './images/center.bmp';
-import { EditorFormatAlignCenter } from 'material-ui/svg-icons';
-import centerFocusStrong from 'material-ui/svg-icons/image/center-focus-strong';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
-import color from '@material-ui/core/colors/indigo';
-import router from 'material-ui/svg-icons/hardware/router';
 import About from './About';
-
-
 
 class Landing extends Component {
 render() {

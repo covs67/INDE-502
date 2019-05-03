@@ -1,9 +1,5 @@
 import React,{ Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {AppBar, Button, Typography} from '@material-ui/core/';
-import {TextField} from 'material-ui';
-
-
 
 class About extends Component {
 render(){

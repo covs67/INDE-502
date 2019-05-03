@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 import {AppBar, Button} from '@material-ui/core/';
 import TextField from 'material-ui/TextField';
-import { checkPropTypes } from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 var img = require("./images/blockeasy.JPG");
-
 
 class Login extends Component {
 constructor (props)
