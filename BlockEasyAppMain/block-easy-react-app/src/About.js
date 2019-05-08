@@ -8,10 +8,10 @@ render(){
          
          <center>
            <br/>
-           {/* About me header */}
+           {/* About header */}
          <p style={{color:'blue', fontSize : '28px',fontWeight:'bold'}}>About</p>
          <div style={{ height:'50%'}}>
-          {/* About me content */}
+          {/* About content */}
          <img src={require('./images/about.JPG')} style={{float:'left', width:'30%',height:'5%'}}/>
 
              <p style={{ width:'30%', fontSize : '20px'}}> 

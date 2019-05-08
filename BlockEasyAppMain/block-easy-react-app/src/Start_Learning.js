@@ -25,10 +25,10 @@ class Start_Learning extends Component {
               </p>
               <img src={require('./images/snap2.JPG')} alt='blockchain basics' style={{float:'center'}}/>
               </div></Tab.Pane> </div>},
-            { menuItem: 'What is block chain technology?', render: () => 
+            { menuItem: 'What do Cryptocurrencies Mean?', render: () => 
             <div style={{width:'100%' }}>
             <Tab.Pane><div >
-            <h1>What is the Blockchain Technology?</h1>
+            <h1>What do Cryptocurrencies Mean?</h1>
             <p style={{fontSize : '22px'}}>
                       The blockchain is an undeniably ingenious invention – 
             the brainchild of a person or group of people known by the pseudonym, 
@@ -42,9 +42,9 @@ class Start_Learning extends Component {
             </p>
             <img src={require('./images/snap2.JPG')} alt='blockchain basics' style={{float:'center'}}/>
             </div></Tab.Pane> </div>},
-            { menuItem: 'What is block chain technology?', render: () => <div style={{width:'100%' }}>
+            { menuItem: 'Blockchain vs Cryptocurrrencies', render: () => <div style={{width:'100%' }}>
             <Tab.Pane><div >
-            <h1>What is the Blockchain Technology?</h1>
+            <h1>Blockchain vs Cryptocurrrencies</h1>
             <p style={{fontSize : '22px'}}>
                       The blockchain is an undeniably ingenious invention – 
             the brainchild of a person or group of people known by the pseudonym, 
