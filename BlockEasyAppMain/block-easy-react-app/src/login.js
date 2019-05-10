@@ -3,6 +3,7 @@ import {AppBar, Button} from '@material-ui/core/';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 var img = require("./images/blockeasy.JPG");
+import { BrowserRouter as Router, Redirect, Link, Switch, Route } from 'react-router-dom';
 
 class Login extends Component {
 constructor (props)
@@ -39,10 +40,18 @@ constructor (props)
         ...errors
       })
     }
+    else (  this.setState({
+redirectToHome: 'true'
+    })
+
+    )
 }
 
 
 render() {
+if(this.state.redirectToHome){
+<Redirect to='/Home'/>
+}
 
 return(
   <div>
