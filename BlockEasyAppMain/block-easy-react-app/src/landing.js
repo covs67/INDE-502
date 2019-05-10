@@ -4,6 +4,7 @@ import Background from './images/center.bmp';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
 import About from './About';
 import Start_Learning from './Start_Learning';
+import Default from './default.js';
 
 class Landing extends Component {
 render() {
@@ -38,7 +39,8 @@ return(<div>
           <Switch>
           <Route exact path='/Landing' component={Start_Learning} />
           <Route exact path='/Start_Learning' component={Start_Learning}/>
-          {/* <Route exact path='/About' component={About} /> */}
+           <Route exact path='/About' component={About} /> 
+           <Route component={Default} />
             {/* <Route exact path='/Landing' component={Landing} />
             <Route exact path='/Home' component={Home} />
             <Route path='/create' component={Create} /> */}
