@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Background from './images/center.bmp';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
 class Home extends Component {
 
