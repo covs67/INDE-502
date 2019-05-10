@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import {AppBar, Button} from '@material-ui/core/';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-var img = require("./images/blockeasy.JPG");
 import { BrowserRouter as Router, Redirect, Link, Switch, Route } from 'react-router-dom';
+var img = require("./images/blockeasy.JPG");
 
 class Login extends Component {
 constructor (props)
 {super (props)
 }
-  state={Username:'', Password:'', redirectToHome:false, error:[], password_error:'', //Store password error message
+state={Username:'', Password:'', redirectToHome:true, error:[], password_error:'', //Store password error message
   username_error:''//Store username error message
-};
+};  
+
+
  handleRegister(event){
   event.stopPropagation()
   //To store the errors
@@ -49,8 +51,14 @@ redirectToHome: 'true'
 
 
 render() {
+  
+
 if(this.state.redirectToHome){
-<Redirect to='/Home'/>
+  return(
+<Redirect to={{
+          pathname: '/Landing' 
+      }}/>
+  )
 }
 
 return(
@@ -79,9 +87,10 @@ this.setState({Password:event.target.value
  }}/>
   <br/>
   </div>
+  
   <div style={{marginTop:'3%'}}>
-  <Button variant='contained' color='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Login</Button>
-  <Button variant='contained' color='primary'>Create</Button>
+ <Button variant='contained' color='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Login</Button>
+  <Link to={{ pathname: "/create" }} ><Button variant='contained' color='primary'>Create</Button></Link>
   </div>
   
 

@@ -18,24 +18,24 @@ class Home extends Component {
         return(
 <div>
 <div style={home_style}>
-        <Button variant="raised" color='primary' style={{width:'15%', height:'10%', borderRadius:'25px', position:'absolute', bottom:100 }}>
+<Link to={{ pathname: "/Start_Learning" }} ><Button variant="raised" color='primary' style={{width:'15%', height:'10%', borderRadius:'25px', position:'absolute', bottom:100 }}>
         Begin Tutorial
-        </Button>
+        </Button></Link>
         </div>
         <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/realeastate.JPG')}/>
     <br/><p style={{fontSize:'20px', width:'65%'}}>How Will the BlockChain Tech Change Real Estate?</p><br/>
 
-    <Button variant='raised' color='primary'> Read Topic</Button><hr style={{width:'80%', marginRight:'20%'}}/></div>
+    <Link to={{ pathname: "/Start_Learning" }} ><Button variant='raised' color='primary'> Read Topic</Button></Link><hr style={{width:'80%', marginRight:'20%'}}/></div>
     <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/realeastate.JPG')}/>
 
     <br/><p style={{fontSize:'20px', width:'65%'}}>How Will the BlockChain Tech Change Real Estate?</p><br/>
-    <Button variant='raised' color='primary'> Read Topic</Button><hr style={{width:'80%', marginRight:'20%'}}/></div>
+    <Link to={{ pathname: "/Start_Learning" }} ><Button variant='raised' color='primary'> Read Topic</Button></Link><hr style={{width:'80%', marginRight:'20%'}}/></div>
 
     <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/realeastate.JPG')}/>
     <br/><p style={{fontSize:'20px', width:'65%'}}>How Will the BlockChain Tech Change Real Estate?</p><br/>
-    <Button variant='raised' color='primary'> Read Topic</Button><hr style={{width:'80%', marginRight:'20%'}}/></div>
+    <Link to={{ pathname: "/Start_Learning" }} ><Button variant='raised' color='primary'> Read Topic</Button></Link><hr style={{width:'80%', marginRight:'20%'}}/></div>
 
-    <center><Button variant='raised' style={{margin:'5%', width:'18%', height:'10vh', borderRadius:'25px', background: 'linear-gradient(45deg, #9752FF 30%, #6600FF 90%)'}} color='primary'>VIEW ALL TOPICS</Button></center>
+    <center><Link to={{ pathname: "/Start_Learning" }} ><Button variant='raised' style={{margin:'5%', width:'18%', height:'10vh', borderRadius:'25px', background: 'linear-gradient(45deg, #9752FF 30%, #6600FF 90%)'}} color='primary'>VIEW ALL TOPICS</Button></Link></center>
     <center><h1>A Groundbreaking Learning Experience</h1></center>
     <div style={{width:'20%', margin:'2%', display:'inline-block'}} >
         <center>
@@ -85,7 +85,7 @@ class Home extends Component {
         <p style={{color:'white', fontSize:'50px', marginTop:'10px'}}>Make A Start</p>
         
         <p style={{color:'white', fontSize:'20px'}}>It’s not just about training. It’s about progress. A platform that allows you to take control of your career by learning the right skills at the right time.</p>
-        <Button variant='Raised' color='primary' style={{borderRadius:'25px', backgroundColor:'white', height:'5vh', width:'20vh', marginBottom:'10px'}}>Start Now</Button>
+        <Link to={{ pathname: "/Start_Learning" }} ><Button variant='Raised' color='primary' style={{borderRadius:'25px', backgroundColor:'white', height:'5vh', width:'20vh', marginBottom:'10px'}}>Start Now</Button></Link>
         </div>
         </center>
 </div>
