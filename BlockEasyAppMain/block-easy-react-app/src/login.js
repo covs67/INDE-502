@@ -53,13 +53,13 @@ redirectToHome: 'true'
 render() {
   
 
-if(this.state.redirectToHome){
-  return(
-<Redirect to={{
-          pathname: '/Landing' 
-      }}/>
-  )
-}
+// if(this.state.redirectToHome){
+//   return(
+// <Redirect to={{
+//           pathname: '/Landing' 
+//       }}/>
+//   )
+// }
 
 return(
   <div>

@@ -9,6 +9,7 @@ import Landing from './landing.js';
 import Home from './Home.js'
 import Start_Learning from './Start_Learning.js'
 import Default from './default.js'
+import About from './About';
 
 class App extends Component {
   render() {
@@ -18,6 +19,8 @@ class App extends Component {
             <Route exact path='/' component={Login} />
             <Route exact path='/Landing' component={Landing} />
             <Route path='/create' component={Create} />
+            {/* <Route path='/About' component = {About} /> */}
+            {/* <Route path='/startlearning' component = {Start_Learning} /> */}
             {/* <Route component={Default} />    */}
        </Switch>
       

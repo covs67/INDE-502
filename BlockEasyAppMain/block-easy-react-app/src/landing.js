@@ -1,70 +1,95 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
+import './App.css';
+import { BrowserRouter as Router, Switch, Route,Link,Redirect } from 'react-router-dom';
+import Home from './Home.js';
+import Login from './login.js';
+import Start_Learning from './Start_Learning.js';
+// import challenge from './challengeyourself.js';
+import Default from './default.js';
+import About from './About.js';
+import Create from './create.js';
 import Background from './images/center.bmp';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
-import About from './About';
-import Start_Learning from './Start_Learning';
-import Default from './default.js';
-import Home from './Home';
-
+/**
+ * This is the login component of the application.
+ */
 class Landing extends Component {
-render() {
-
-    const home_style = {
-        marginTop:'6%',
-        width:'100%',
-        height:'80vh',
-        backgroundImage: `url(${Background})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+    state={
+        login:'' ,//Element determining the login status
+        redirectToLogin:'false'
+    }
+    constructor(props){
+        super(props)
+        
     }
 
-    const button_style ={
-        fontSize : '20px',
-        fontWeight:'bold', 
-        marginLeft:'5%'
-
+    handleLogout(event) {
+        event.stopPropagation()
+        this.setState({
+            login:'false',
+            redirectToLogin:'true'
+        })
+        this.state.login='false'
     }
-    
-return(<div>
-    <Router>
-      <Switch>
+
+    render() {
+        if(this.state.redirectToLogin=='true'){
+            return(
+                <Redirect to='/'/>
+            )
+        }
+        else
+        return (
+            
+            <Router>
+            <AppBar style={{position:'fixed',top:'0'}}color="default">
+            {/* Toolbar for the buttons determing the redirection for pages. */}
+                <Toolbar>
+                    <Link to={{ pathname: "/Landing" ,
+                    state:{login:this.state.login}}} style={{ textDecoration: 'none' , marginLeft:'1%'}} >
+                    <img src={require('./images/blockeasy.JPG')} style={{height:'8vh',marginTop:'2vh'}}/>
+                    </Link>
+                    <Link to={{ pathname: "/startlearning" ,
+                    state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh' , marginLeft:'1%'}} >
+                    <Button variant='raisedPrimary' color="inherit">
+                    <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Start Learning</p></Button></Link>
+                    <Link to={{ pathname: "/challenge" ,state:{login:this.state.login}}} style={{ textDecoration: 'none' ,marginTop:'2vh', marginLeft:'1%'}}>
+                    <Button variant='raisedPrimary' color="inherit">
+                    <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Challenge Yourself</p></Button></Link>
+                    <Link to={{ pathname: "/about" ,state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh', marginLeft:'1%' }}>
+                    <Button variant='raisedPrimary' color="inherit">
+                    <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>About</p></Button></Link>
+                    
+                    <Link to={{ pathname: "/about" ,state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh', marginLeft:'1%' }}>
+                    <Button variant='raisedPrimary' color="inherit">
+                    <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Contact</p></Button></Link>
+                    
+                    <Button variant='raisedPrimary' color="inherit" style={{marginLeft:'24%',marginTop:'2vh',float:'right'}}
+                    onClick={(event) => { this.handleLogout(event) }}
+                    ><p style={{fontSize : '20px',fontWeight:'550', color:'black'}}>Logout</p></Button>
+                </Toolbar>
+                <hr/>
+      </AppBar>
+                <Switch>
                     <Route exact path='/Landing' component={Home} />
                     <Route path='/startlearning' component={Start_Learning} />
                     <Route path='/about' component={About} />
                     {/* <Route path='/challenge' component={challenge} /> */}
-                    {/* <Route path='/create' component={Create} /> */}
+                    <Route path='/create' component={Create} />
                     <Route component={Default} />
                 </Switch>
-      </Router>
-        <AppBar color='default'>
-            <Toolbar>
-            <Link to={{ pathname: "/Home" }} ><img src={require('./images/blockeasy.JPG')} style={{marginTop:'2vh', height:'8vh', width:'15%', marginBottom:'1%'}} /></Link>
-            <Link to={{ pathname: "/startlearning" }} ><Button variant="raisedPrimary" colour="inherit" style={button_style}>Start Learning</Button></Link>
-            <Link to={{ pathname: "/" }} ><Button variant="raisedPrimary" colour="inherit" style={button_style}>Challenge Yourself</Button></Link>
-            <Link to={{ pathname: "/about" }} ><Button variant="raisedPrimary" colour="inherit" style={button_style}>About</Button></Link>
-            <Link to={{ pathname: "/about" }} ><Button variant="raisedPrimary" colour="inherit" style={button_style}>Contact</Button></Link>
-            </Toolbar>
-        </AppBar>
-      
-      <div>
-
-      <p style={{float:'left', marginLeft:'1%'}}>&copy; Copyright 2019. Blockeasy. All rights Reserved.</p>
-      <div id="social_images" style={{marginLeft:'90%'}}>
-      <img src={require('./images/fb.ico')} style={{height:'40%', width:'20%'}}/>
-      <img src={require('./images/insta.ico')} style={{height:'40%', width:'20%'}}/>
-      <img src={require('./images/twitter.ico')} style={{height:'40%', width:'20%'}}/>
-      <img src={require('./images/yt.ico')} style={{height:'40%', width:'20%'}}/>
-      </div>
-      </div>
-        
-       </div>
-    
-
-);
-
+                {/* Div with the second part of page displaying buttons to social sharing*/}
+        <div style={{height:'100%'}}>
+        <hr/>
+            <Typography variant="overline" style={{float:'left',marginTop:'0.5%',marginLeft:'2%',marginRight:'60%'}} gutterBottom >Copyright 2019. Blockeasy. All rights Reserved.</Typography>
+            {/* <a href="http://www.facebook.com"> <img src={require('./share/fb.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
+            <a href="http://www.youtube.com"> <img src={require('./share/yt.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
+            <a href="http://www.twitter.com"> <img src={require('./share/twitter.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
+            <a href="http://www.instagram.com"> <img src={require('./share/insta.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a> */}
+        </div>
+            </Router>
+           
+        );
+    }
 }
-}
-
-
 export default Landing;
