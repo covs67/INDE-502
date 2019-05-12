@@ -7,7 +7,7 @@ import Login from './login.js';
 import Create from './create.js';
 import Landing from './landing.js';
 import Home from './Home.js'
-import Start_Learning from './Start_Learning.js'
+
 import Default from './default.js'
 import About from './About';
 
@@ -18,12 +18,15 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Login} />
             <Route exact path='/Landing' component={Landing} />
-            <Route path='/create' component={Create} />
-            {/* <Route path='/About' component = {About} /> */}
-            {/* <Route path='/startlearning' component = {Start_Learning} /> */}
-            {/* <Route component={Default} />    */}
+            <Route path='/create' component={Create} /> 
+            {/* <Route exact path='/home' component={Home} />
+           <Route path='/startlearning' component={startlearning} />
+           <Route path='/about' component={About} />
+           <Route path='/challenge' component={challenge} />
+           */}
+           
+           <Route component={Default} />
        </Switch>
-      
    </Router>
     );
   }

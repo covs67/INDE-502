@@ -1,8 +1,24 @@
 import React,{ Component } from 'react';
 import {AppBar, Button, Typography} from '@material-ui/core/';
+import { BrowserRouter as Router, Switch, Route,Link,Redirect } from 'react-router-dom';
 
 class About extends Component {
+
+    state={
+        login:'false'
+      }
+    constructor (props){
+    super (props)
+    if(this.props.location.state === undefined){
+      this.state.login='false'
+    }
+    else{
+    this.state.login='true'
+    }  
+    
+    }
 render(){
+    if(this.state.login='true'){
     return(
 <div style={{marginTop:'6%'}}>   
          
@@ -62,6 +78,12 @@ render(){
 
 
     )
+    }
+    else{
+        return(
+        <Redirect to='/'/>
+        )
+      }
 }
 }
 

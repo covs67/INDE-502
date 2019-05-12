@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route,Link,Redirect } from 'react-router-dom';
 import Home from './Home.js';
 import Login from './login.js';
-import Start_Learning from './Start_Learning.js';
+import startlearning from './startlearning.js'
 // import challenge from './challengeyourself.js';
 import Default from './default.js';
 import About from './About.js';
@@ -20,7 +20,12 @@ class Landing extends Component {
     }
     constructor(props){
         super(props)
-        
+        if(this.props.location.state === undefined){
+            this.state.login='false'
+       }
+       else{
+        this.state.login='true'
+       }  
     }
 
     handleLogout(event) {
@@ -38,7 +43,9 @@ class Landing extends Component {
                 <Redirect to='/'/>
             )
         }
-        else
+        if(this.state.login=='true')
+        {
+            console.log(this.props.location.state.login)
         return (
             
             <Router>
@@ -70,9 +77,9 @@ class Landing extends Component {
                 </Toolbar>
                 <hr/>
       </AppBar>
-                <Switch>
+      <Switch>
                     <Route exact path='/Landing' component={Home} />
-                    <Route path='/startlearning' component={Start_Learning} />
+                    <Route path='/startlearning' component={startlearning} />
                     <Route path='/about' component={About} />
                     {/* <Route path='/challenge' component={challenge} /> */}
                     <Route path='/create' component={Create} />
@@ -90,6 +97,12 @@ class Landing extends Component {
             </Router>
            
         );
+        }
+        else{
+            return(
+                <Redirect to='/'/>
+            )
+        }
     }
 }
 export default Landing;

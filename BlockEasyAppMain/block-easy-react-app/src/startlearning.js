@@ -1,10 +1,23 @@
 import React,{ Component } from 'react';
 import { Typography } from '@material-ui/core';
 import {Tab, Container} from "semantic-ui-react";
+import { BrowserRouter as Router, Switch, Route,Link,Redirect } from 'react-router-dom';
 
 
-class Start_Learning extends Component {
+class startlearning extends Component {
+  state={
+    login:'false'
+  }
+constructor (props){
+super (props)
+if(this.props.location.state === undefined){
+  this.state.login='false'
+}
+else{
+this.state.login='true'
+}  
 
+}
 
     render(){
         const panes = [
@@ -64,26 +77,32 @@ class Start_Learning extends Component {
           styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
           document.head.appendChild(styleLink);
     
-
-        return(
-<div style={{width:'100%'}}>
-<img src={require('./images/snap23.jpg')} style={{height:'60vh', marginLeft:'25%', width:'60%', marginTop:'6%', marginRight:'10vh'}}/>
-<div style={{marginTop:'1%'}}><h1 style={{display:'inline', marginLeft:'3%'}}>Topics</h1>
-<h1 style={{display:'inline', marginLeft:'23%'}}>Explanations</h1>
-
-<Container style={{ marginLeft: 10,width:'100%',float:'left' }}>
-    <hr/>
-      <h1 style={{color:'purple',marginLeft:'17%'}}>Topics &nbsp;&nbsp;&nbsp;&nbsp; Explanations</h1>
-      <hr/>
-    <Tab  menu={{ fluid: true, vertical: true , tabular: true}} panes={panes} />
-    <hr/>
-  </Container>
-</div>
-</div>
-        )
+          if(this.state.login='true'){
+            return(
+              <div style={{width:'100%'}}>
+              <img src={require('./images/snap23.jpg')} style={{height:'60vh', marginLeft:'25%', width:'60%', marginTop:'6%', marginRight:'10vh'}}/>
+              <div style={{marginTop:'1%'}}><h1 style={{display:'inline', marginLeft:'3%'}}>Topics</h1>
+              <h1 style={{display:'inline', marginLeft:'23%'}}>Explanations</h1>
+              
+              <Container style={{ marginLeft: 10,width:'100%',float:'left' }}>
+                  <hr/>
+                    <h1 style={{color:'purple',marginLeft:'17%'}}>Topics &nbsp;&nbsp;&nbsp;&nbsp; Explanations</h1>
+                    <hr/>
+                  <Tab  menu={{ fluid: true, vertical: true , tabular: true}} panes={panes} />
+                  <hr/>
+                </Container>
+              </div>
+              </div>
+                      )
+          }
+        else{
+          return(
+          <Redirect to='/'/>
+          )
+        }
     }
 }
 
 
 
-export default Start_Learning;
+export default startlearning;

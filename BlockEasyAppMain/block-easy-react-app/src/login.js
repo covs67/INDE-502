@@ -9,7 +9,7 @@ class Login extends Component {
 constructor (props)
 {super (props)
 }
-state={Username:'', Password:'', redirectToHome:true, error:[], password_error:'', //Store password error message
+state={Username:'', Password:'', redirectToHome:false, error:[], password_error:'', //Store password error message
   username_error:''//Store username error message
 };  
 
@@ -42,7 +42,9 @@ state={Username:'', Password:'', redirectToHome:true, error:[], password_error:'
         ...errors
       })
     }
-    else (  this.setState({
+    else (  
+      
+      this.setState({
 redirectToHome: 'true'
     })
 
@@ -53,53 +55,57 @@ redirectToHome: 'true'
 render() {
   
 
-// if(this.state.redirectToHome){
-//   return(
-// <Redirect to={{
-//           pathname: '/Landing' 
-//       }}/>
-//   )
-// }
+if(this.state.redirectToHome){
+  return(
+<Redirect to={{
+          pathname: '/Landing',
+          state:{login:'true'}, 
+      }}/>
+  )
+}
+else {
 
-return(
-  <div>
-   <MuiThemeProvider>
-    <AppBar position="static" color="default">
-      <div style={{height:'50%',width:'50%',marginTop:'5px'}}>
-       <h1>Login</h1>
-   </div>
-  </AppBar>
-  <center>
-  <img src = {img} style={{marginTop:'2%'}}
-       />
-  <br/>
-  <div>
-  <TextField label='Username' errorText={this.state.username_error} onChange={(event)=> {
-this.setState({Username:event.target.value
-
-})
- }}/>
-  <br/>
-  <TextField label='Password' errorText={this.state.password_error} type='Password' onChange={(event)=> {
-this.setState({Password:event.target.value
-
-})
- }}/>
-  <br/>
-  </div>
+  return(
+    <div>
+     <MuiThemeProvider>
+      <AppBar position="static" color="default">
+        <div style={{height:'50%',width:'50%',marginTop:'5px'}}>
+         <h1>Login</h1>
+     </div>
+    </AppBar>
+    <center>
+    <img src = {img} style={{marginTop:'2%'}}
+         />
+    <br/>
+    <div>
+    <TextField label='Username' errorText={this.state.username_error} onChange={(event)=> {
+  this.setState({Username:event.target.value
   
-  <div style={{marginTop:'3%'}}>
- <Button variant='contained' color='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Login</Button>
-  <Link to={{ pathname: "/create" }} ><Button variant='contained' color='primary'>Create</Button></Link>
-  </div>
+  })
+   }}/>
+    <br/>
+    <TextField label='Password' errorText={this.state.password_error} type='Password' onChange={(event)=> {
+  this.setState({Password:event.target.value
   
+  })
+   }}/>
+    <br/>
+    </div>
+    
+    <div style={{marginTop:'3%'}}>
+   <Button variant='contained' color='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Login</Button>
+    <Link to={{ pathname: "/create" }} ><Button variant='contained' color='primary'>Create</Button></Link>
+    </div>
+    
+  
+    </center>
+    </MuiThemeProvider>
+    </div>
+  
+  
+  );
+}
 
-  </center>
-  </MuiThemeProvider>
-  </div>
-
-
-);
 
 }
 }
