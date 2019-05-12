@@ -10,6 +10,7 @@ import About from './About.js';
 import Create from './create.js';
 import Background from './images/center.bmp';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
+import challengeyourself from './challengeyourself';
 /**
  * This is the login component of the application.
  */
@@ -60,7 +61,7 @@ class Landing extends Component {
                     state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh' , marginLeft:'1%'}} >
                     <Button variant='raisedPrimary' color="inherit">
                     <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Start Learning</p></Button></Link>
-                    <Link to={{ pathname: "/challenge" ,state:{login:this.state.login}}} style={{ textDecoration: 'none' ,marginTop:'2vh', marginLeft:'1%'}}>
+                    <Link to={{ pathname: "/challengeyourself" ,state:{login:this.state.login}}} style={{ textDecoration: 'none' ,marginTop:'2vh', marginLeft:'1%'}}>
                     <Button variant='raisedPrimary' color="inherit">
                     <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Challenge Yourself</p></Button></Link>
                     <Link to={{ pathname: "/about" ,state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh', marginLeft:'1%' }}>
@@ -81,7 +82,7 @@ class Landing extends Component {
                     <Route exact path='/Landing' component={Home} />
                     <Route path='/startlearning' component={startlearning} />
                     <Route path='/about' component={About} />
-                    {/* <Route path='/challenge' component={challenge} /> */}
+                    <Route path='/challengeyourself' component={challengeyourself} />
                     <Route path='/create' component={Create} />
                     <Route component={Default} />
                 </Switch>
