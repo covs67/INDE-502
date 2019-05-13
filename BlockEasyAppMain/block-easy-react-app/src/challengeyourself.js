@@ -45,7 +45,7 @@ class challengeyourself extends Component {
                 <embed width="1100" height="650" base="https://external.kongregate-games.com/gamez/0000/6057/live/" src="https://external.kongregate-games.com/gamez/0000/6057/live/embeddable_6057.swf" type="application/x-shockwave-flash"></embed><br/>
                 
                 </div>
-                </center>        
+                </center>                
     </div>
       )
       //Message to be displayed if the user has not logged in.
