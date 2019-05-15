@@ -36,7 +36,7 @@ this.state.login='true'
               In this guide, we are going to explain to you what the blockchain 
               technology is, and what its properties are that make it so unique.
               </p>
-              <img src={require('./images/snap2.JPG')} alt='blockchain basics' style={{float:'center'}}/>
+              <img src={require('./images/infographics12.jpg')} alt='blockchain basics' style={{float:'center'}}/>
               </div></Tab.Pane> </div>},
             { menuItem: 'What do Cryptocurrencies Mean?', render: () => 
             <div style={{width:'100%' }}>
@@ -53,7 +53,7 @@ this.state.login='true'
             In this guide, we are going to explain to you what the blockchain 
             technology is, and what its properties are that make it so unique.
             </p>
-            <img src={require('./images/snap2.JPG')} alt='blockchain basics' style={{float:'center'}}/>
+            <img src={require('./images/infographics12.jpg')} alt='blockchain basics' style={{float:'center'}}/>
             </div></Tab.Pane> </div>},
             { menuItem: 'Blockchain vs Cryptocurrrencies', render: () => <div style={{width:'100%' }}>
             <Tab.Pane><div >
@@ -69,7 +69,7 @@ this.state.login='true'
             In this guide, we are going to explain to you what the blockchain 
             technology is, and what its properties are that make it so unique.
             </p>
-            <img src={require('./images/snap2.JPG')} alt='blockchain basics' style={{float:'center'}}/>
+            <img src={require('./images/infographics12.jpg')} alt='blockchain basics' style={{float:'center'}}/>
             </div></Tab.Pane> </div> },
           ]
           const styleLink = document.createElement("link");
