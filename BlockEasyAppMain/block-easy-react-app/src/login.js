@@ -3,7 +3,7 @@ import {AppBar, Button} from '@material-ui/core/';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { BrowserRouter as Router, Redirect, Link, Switch, Route } from 'react-router-dom';
-var img = require("./images/blockeasy.JPG");
+var img = require("./images/blockeasylogo2.png");
 
 class Login extends Component {
 constructor (props)

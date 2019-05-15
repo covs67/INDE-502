@@ -86,7 +86,7 @@ return(
       
     </AppBar>
 <center>
-  <img src={require('./images/blockeasy.JPG')} style={{marginTop:'2%'}}>
+  <img src={require('./images/blockeasylogo2.png')} style={{marginTop:'2%'}}>
   </img>
   <div style={{alignItems:'space-between'}}>
   <TextField label='Name' errorText={this.state.name_error} style={{marginBottom:'1%'}} onChange={(event)=> {

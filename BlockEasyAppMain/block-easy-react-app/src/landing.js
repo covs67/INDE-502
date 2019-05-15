@@ -55,13 +55,13 @@ class Landing extends Component {
                 <Toolbar>
                     <Link to={{ pathname: "/Landing" ,
                     state:{login:this.state.login}}} style={{ textDecoration: 'none' , marginLeft:'1%'}} >
-                    <img src={require('./images/blockeasy.JPG')} style={{height:'8vh',marginTop:'2vh'}}/>
+                    <img src={require('./images/blockeasylogo2.png')} style={{height:'7vh',marginTop:'2vh'}}/>
                     </Link>
                     <Link to={{ pathname: "/startlearning" ,
                     state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh' , marginLeft:'1%'}} >
                     <Button variant='raisedPrimary' color="inherit">
                     <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Start Learning</p></Button></Link>
-                    <Link to={{ pathname: "/challengeyourself" ,state:{login:this.state.login}}} style={{ textDecoration: 'none' ,marginTop:'2vh', marginLeft:'1%'}}>
+                    <Link to={{ pathname: "/challenge" ,state:{login:this.state.login}}} style={{ textDecoration: 'none' ,marginTop:'2vh', marginLeft:'1%'}}>
                     <Button variant='raisedPrimary' color="inherit">
                     <p style={{fontSize : '20px',fontWeight:'bold', color:'black'}}>Challenge Yourself</p></Button></Link>
                     <Link to={{ pathname: "/about" ,state:{login:this.state.login}}} style={{ textDecoration: 'none',marginTop:'2vh', marginLeft:'1%' }}>

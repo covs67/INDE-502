@@ -41,14 +41,12 @@ class challengeyourself extends Component {
               <center>
                
       {/* Div with the second part of page displaying flash game*/}
-      <div style={{marginTop:'5%', marginBottom:'2%'}}>
-                <embed width="1100" height="650" base="https://external.kongregate-games.com/gamez/0000/6057/live/" src="https://external.kongregate-games.com/gamez/0000/6057/live/embeddable_6057.swf" type="application/x-shockwave-flash"></embed><br/>
-                
+                <div style={{marginTop:'5%', marginBottom:'2%'}}>
+                <embed width="1100" height="650" base="" src={require('./images/animatedChallenge.swf')} type="application/x-shockwave-flash"></embed><br/>
                 </div>
 
                 <div style={{marginTop:'5%', marginBottom:'2%'}}>
-                <embed width="1100" height="650" base="" src={require('./images/animatedChallenge.swf')} type="application/x-shockwave-flash"></embed><br/>
-                
+                <embed width="1100" height="650" base="https://external.kongregate-games.com/gamez/0000/6057/live/" src="https://external.kongregate-games.com/gamez/0000/6057/live/embeddable_6057.swf" type="application/x-shockwave-flash"></embed><br/>
                 </div>
                 </center>                
     </div>
