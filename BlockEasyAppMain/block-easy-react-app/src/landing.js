@@ -12,7 +12,7 @@ import Background from './images/center.bmp';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
 import challengeyourself from './challengeyourself';
 /**
- * This is the login component of the application.
+ * This is the login component of the app.
  */
 class Landing extends Component {
     state={

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Background from './images/center.bmp';
+import Background from './images/headerimg1.png';
 import {AppBar,Toolbar,Typography,Button} from '@material-ui/core'
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
@@ -23,16 +23,16 @@ class Home extends Component {
         Begin Tutorial
         </Button></Link>
         </div>
-        <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/realeastate.JPG')}/>
+        <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/real.jpg')}/>
     <br/><p style={{fontSize:'20px', width:'65%'}}>How Will the BlockChain Tech Change Real Estate?</p><br/>
 
     <Link to={{ pathname: "/startlearning" }} ><Button variant='raised' color='primary'> Read Topic</Button></Link><hr style={{width:'80%', marginRight:'20%'}}/></div>
-    <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/realeastate.JPG')}/>
+    <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/real.jpg')}/>
 
     <br/><p style={{fontSize:'20px', width:'65%'}}>How Will the BlockChain Tech Change Real Estate?</p><br/>
     <Link to={{ pathname: "/startlearning" }} ><Button variant='raised' color='primary'> Read Topic</Button></Link><hr style={{width:'80%', marginRight:'20%'}}/></div>
 
-    <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/realeastate.JPG')}/>
+    <div style={{display:'inline-block', width:'33%', marginTop:'3%'}}><img src={require('./images/real.jpg')}/>
     <br/><p style={{fontSize:'20px', width:'65%'}}>How Will the BlockChain Tech Change Real Estate?</p><br/>
     <Link to={{ pathname: "/startlearning" }} ><Button variant='raised' color='primary'> Read Topic</Button></Link><hr style={{width:'80%', marginRight:'20%'}}/></div>
 
@@ -71,16 +71,16 @@ class Home extends Component {
         </div>
         <center><h1>Fast Track Your Blockchain Learning With Our Easy-To-Use Tools</h1>
         
-        <img src={require('./images/tools.JPG')}/>
+        <img src={require('./images/tools12.png')}/>
         <div style={{display:'inline-block'}}>
         
         <p style={{width:'30%', float:'left', marginLeft:'15%', marginTop:'5%'}}><h3>Ease of Use</h3>This is one of our best features and the description for it. This is one of our best features and the description for it. </p>
-        <img src={require('./images/idea1.JPG')} style={{float:'right', marginRight:'10%'}}/>
+        <img src={require('./images/easyuse1.jpg')} style={{float:'right', marginRight:'10%'}}/>
         </div>
         <div style={{display:'inline-block'}}>
         
         <p style={{width:'30%', float:'right', marginRight:'15%', marginTop:'5%'}}><h3>Fun Challenge Questions and Answers</h3>This is one of our best features and the description for it. This is one of our best features and the description for it. </p>
-        <img src={require('./images/idea2.JPG')} style={{float:'left', marginLeft:'10%'}}/>
+        <img src={require('./images/funqa.jpg')} style={{float:'left', marginLeft:'10%'}}/>
         </div>
         <div style={{background:'linear-gradient(45deg, #6600FF 30%, #37008A 90%)', height:'25vh' }}>
         <p style={{color:'white', fontSize:'50px', marginTop:'10px'}}>Make A Start</p>
