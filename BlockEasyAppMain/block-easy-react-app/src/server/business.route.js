@@ -22,5 +22,18 @@ businessRoutes.route('/get/:name/:password').get(function (req, res) {e
     var password = req.params.password;
  var flag = false;
 
+ Business.find(function(err, Businesses){
+     if(err){
+         console.log(err);
+     }
+     else{
+         //check if user exists
+         Businesses.forEach(element =>{
+             //check if data matches
+             if(element.email)
+         })
+     }
+ })
+
 
   module.exports = businessRoutes;
