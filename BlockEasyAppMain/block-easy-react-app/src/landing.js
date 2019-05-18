@@ -82,7 +82,7 @@ class Landing extends Component {
                     <Route exact path='/Landing' component={Home} />
                     <Route path='/startlearning' component={startlearning} />
                     <Route path='/about' component={About} />
-                    <Route path='/challengeyourself' component={challengeyourself} />
+                    <Route exact='/challengeyourself' component={challengeyourself} />
                     <Route path='/create' component={Create} />
                     <Route component={Default} />
                 </Switch>
@@ -90,10 +90,10 @@ class Landing extends Component {
         <div style={{height:'100%'}}>
         <hr/>
             <Typography variant="overline" style={{float:'left',marginTop:'0.5%',marginLeft:'2%',marginRight:'60%'}} gutterBottom >Copyright 2019. Blockeasy. All rights Reserved.</Typography>
-            {/* <a href="http://www.facebook.com"> <img src={require('./share/fb.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
-            <a href="http://www.youtube.com"> <img src={require('./share/yt.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
-            <a href="http://www.twitter.com"> <img src={require('./share/twitter.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
-            <a href="http://www.instagram.com"> <img src={require('./share/insta.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a> */}
+             <a href="http://www.facebook.com"> <img src={require('./images/fb.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
+            <a href="http://www.youtube.com"> <img src={require('./images/yt.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
+            <a href="http://www.twitter.com"> <img src={require('./images/twitter.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a>
+            <a href="http://www.instagram.com"> <img src={require('./images/insta.ico')} style={{marginTop:'1%', height:'2%',width:'2%',marginLeft:'1%'}}/></a> 
         </div>
             </Router>
            
