@@ -11,7 +11,9 @@ businessRoutes.route('/add').post(function (req, res) {
       .then(business => {
         res.status(200).json({'userdata': 'user added successfully'});
       })
-      
+      .catch(err => {
+      res.status(400).send("unable to send to database");
+      });
   });
 
 // Define edit route
@@ -28,11 +30,12 @@ businessRoutes.route('/get/:name/:password').get(function (req, res) {
          //check if user exists
          Businesses.forEach(element =>{
              //check if data matches
-             
+             if(element.email==name && element.password==password){
+                flag=true
               }
          });
          //Send response accordingly
-      
+      if(flag==true){
         res.json({'found':'true'});
       }
       else{
