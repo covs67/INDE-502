@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 //Create server connection
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
     () => {console.log('Database is connected') },
-    err => { console.log('Can not connect to the database'+ err)}
+    
   );
 
   
@@ -21,11 +21,11 @@ app.use(cors());
 
 // Body Parser for getting request content
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+
     //Creating route
-app.use('/', businessRoute);
+
 //Start server
 app.listen(PORT, function(){
-    console.log('Server is running on Port:',PORT);
+
   });
      
