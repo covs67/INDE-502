@@ -94,7 +94,7 @@ else {
     
     <div style={{marginTop:'3%'}}>
    <Button variant='contained' color='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Login</Button>
-    <Link to={{ pathname: "/create" }} ><Button variant='contained' color='primary'>Create</Button></Link>
+    <Link to={{ pathname: "/create" }} ><Button variant='contained' color='primary'>Create An Account</Button></Link>
     </div>
     
   

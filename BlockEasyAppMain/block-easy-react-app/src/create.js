@@ -1,6 +1,6 @@
 import React,{ Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {AppBar, Button} from '@material-ui/core/';
+import {AppBar, Button, Link} from '@material-ui/core/';
 import {TextField} from 'material-ui';
 
 class Create extends Component {
@@ -58,7 +58,7 @@ class Create extends Component {
     //PassVer2 = false;
     flagInvalid = true;
     errors.password2_error="Password Mismatch. Please make sure both passwords match before proceeding."
-    alert("in else block")
+    
   }
   
   //alert(flagInvalid)
@@ -112,7 +112,7 @@ this.setState({Password2:event.target.value
   <br/>
   <div style={{marginTop:'2%'}}>
   <Button variant='contained' colour='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Create</Button>
-  <Button variant='contained' colour='primary'>Cancel</Button>
+  <Link to={{ pathname: "/"}}><Button variant='contained' colour='primary'>Cancel</Button></Link>
   </div>
 </center>
 </MuiThemeProvider>
