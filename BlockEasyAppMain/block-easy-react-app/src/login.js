@@ -78,13 +78,13 @@ else {
          />
     <br/>
     <div>
-    <TextField label='Username' errorText={this.state.username_error} onChange={(event)=> {
+    <TextField label='Username' floatingLabelText="Enter username here" type="email" errorText={this.state.username_error} onChange={(event)=> {
   this.setState({Username:event.target.value
   
   })
    }}/>
     <br/>
-    <TextField label='Password' errorText={this.state.password_error} type='Password' onChange={(event)=> {
+    <TextField label='Password' floatingLabelText="Enter password here" errorText={this.state.password_error} type='Password' onChange={(event)=> {
   this.setState({Password:event.target.value
   
   })

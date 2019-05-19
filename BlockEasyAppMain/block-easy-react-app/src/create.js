@@ -89,22 +89,22 @@ return(
   <img src={require('./images/blockeasylogo2.png')} style={{marginTop:'2%'}}>
   </img>
   <div style={{alignItems:'space-between'}}>
-  <TextField label='Name' errorText={this.state.name_error} style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Name' floatingLabelText="Enter your Name" errorText={this.state.name_error} style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Name:event.target.value
 })
  }}/>
   <br/>
-  <TextField label='Email address' errorText={this.state.email_error} style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Email address' floatingLabelText="Enter your Email" errorText={this.state.email_error} style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Email:event.target.value
 })
  }}/>
   <br/>
-  <TextField label='Password' errorText={this.state.password_error} style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Password' floatingLabelText="Enter Password" errorText={this.state.password_error} style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Password:event.target.value
 })
  }}/>
   <br/>
-  <TextField label='Password' errorText={this.state.password2_error} type='Password2' type='Password' style={{marginBottom:'1%'}} onChange={(event)=> {
+  <TextField label='Password' floatingLabelText="Re-enter Password" errorText={this.state.password2_error} type='Password2' type='Password' style={{marginBottom:'1%'}} onChange={(event)=> {
 this.setState({Password2:event.target.value
 })
  }} />
@@ -112,7 +112,7 @@ this.setState({Password2:event.target.value
   <br/>
   <div style={{marginTop:'2%'}}>
   <Button variant='contained' colour='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Create</Button>
-  <Link to={{ pathname: "/"}}><Button variant='contained' colour='primary'>Cancel</Button></Link>
+  <Link to={{ pathname: "/" }}><Button variant='contained' colour='primary'>Cancel</Button></Link>
   </div>
 </center>
 </MuiThemeProvider>
