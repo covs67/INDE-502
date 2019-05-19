@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {AppBar, Button, Link} from '@material-ui/core/';
 import {TextField} from 'material-ui';
-
+import axios from 'axios';
 class Create extends Component {
 
   constructor (props)
@@ -91,9 +91,9 @@ class Create extends Component {
 //Sending request along with data to server.
 axios.post('http://localhost:4000/add', obj)
 .then(res => {
-  //if data is added successfully redirect to home
+  //if data is added successfully, redirect to home
   if(res.data.userdata=='user added successfully'){
-    alert('User registration successful! Please go to login page and sign in to your new account’)
+    alert('User registration successful! Please go to login page and sign in to your new account')
     this.setState({
       redirectToHome:true
     })
@@ -115,7 +115,9 @@ this.setState({
 
 
   }
-
+/**
+       * Rendering the Create User account page below.
+       */
 render() {
 return(
   <div>

@@ -2,14 +2,21 @@ import React, { Component } from 'react';
 import {AppBar, Button} from '@material-ui/core/';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import axios from 'axios';
 import { BrowserRouter as Router, Redirect, Link, Switch, Route } from 'react-router-dom';
 var img = require("./images/blockeasylogo2.png");
+
 
 class Login extends Component {
 constructor (props)
 {super (props)
 }
-state={Username:'', Password:'', redirectToHome:false, error:[], password_error:'', //Store password error message
+state={
+  Username:'', 
+  Password:'', 
+  redirectToHome:false, 
+  error:[], 
+  password_error:'', //Store password error message
   username_error:''//Store username error message
 };  
 
@@ -25,6 +32,8 @@ state={Username:'', Password:'', redirectToHome:false, error:[], password_error:
   var PassVer=strongRegex.test(String(this.state.Password))
   //Flag to determine that the contents are valid.
   var flagInvalid=false
+  
+  //Setting the error message if email id is invalid.
   if(emailVer === false){
     errors.username_error="Email address is invalid, Re-enter."
     flagInvalid=true
@@ -42,16 +51,33 @@ state={Username:'', Password:'', redirectToHome:false, error:[], password_error:
         ...errors
       })
     }
-    else (  
+    /* else (  
       
       this.setState({
 redirectToHome: 'true'
     })
 
-    )
+    )} */
+
+    else{
+      //getting response from server to check if the user has entered correct information.
+      axios.get('http://localhost:4000/get/'+this.state.Username+'/'+this.state.Password)
+          .then(response => {
+            if(response.data.found=="true"){
+              this.setState({ //If data is correct redirect to Home
+                redirectToHome:true
+              })
+            }
+            else{ //Else show message to re-enter.
+              alert('Account not found, Create a new one or enter correct details')
+            }
+          })
+          .catch(function (error) {
+          })
+    }
 }
 
-
+//Render the login page
 render() {
   
 
