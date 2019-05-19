@@ -8,7 +8,14 @@ class Create extends Component {
   constructor (props)
   {super (props)
   }
-    state={Name:'', Email:'', Password:'', Password2:'', redirectToHome:false, error:[], name_error:'', //Store name error message
+    state={
+    Name:'', 
+    Email:'', 
+    Password:'', 
+    Password2:'', 
+    redirectToHome:false, 
+    error:[], 
+    name_error:'', //Store name error message
     email_error:'', //Store email error message 
     password_error:'', //Store password error message
     password2_error:''   //Store password2 error message  
@@ -24,9 +31,11 @@ class Create extends Component {
   var nameVer =  new RegExp(/[a-zA-Z]$/);
   var nameVer=nameVer.test(String(this.state.Name))
  //alert(nameVer)
+ //Regex to check email is valid
   var re =  new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   var emailVer=re.test(String(this.state.Email).toLowerCase())
   //alert (emailVer)
+  //Regex to check password is valid
   var strongRegex = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/);
   var PassVer=strongRegex.test(String(this.state.Password))
   //alert(PassVer)
@@ -47,7 +56,7 @@ class Create extends Component {
   }
   //Setting the error message if password is invalid.
   if(PassVer === false){
-    errors.password_error="Password is invalid, Re-enter."
+    errors.password_error="Password is invalid, Re-enter. Must be 8 characters or longer, must contain uppercase, lowercase, number and a special character"
     flagInvalid=true
   }
 
@@ -70,6 +79,38 @@ class Create extends Component {
         ...this.state,
         ...errors
       })
+    }
+
+    //If everything is valid, store to database.
+    if(flagInvalid==false){
+      const obj = {
+        name: this.state.Name,
+        email: this.state.Email,
+        password: this.state.Password
+      };
+//Sending request along with data to server.
+axios.post('http://localhost:4000/add', obj)
+.then(res => {
+  //if data is added successfully redirect to home
+  if(res.data.userdata=='user added successfully'){
+    alert('User registration successful! Please go to login page and sign in to your new account’)
+    this.setState({
+      redirectToHome:true
+    })
+  }
+  //Else send error message.
+  else{
+    alert('something went wrong please try again!')
+  }
+});
+
+this.setState({
+  Name: '',
+  Email: '',
+  Password: '',
+  Password2: ''
+})
+
     }
 
 
