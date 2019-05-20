@@ -73,7 +73,7 @@ handlePasswordChange(event) {
         ...errors
       })
     }
-    /* else (  
+    /* else {(  
       
       this.setState({
 redirectToHome: 'true'
