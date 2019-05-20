@@ -6,21 +6,29 @@ import axios from 'axios';
 class Create extends Component {
 
   constructor (props)
-  {super (props)
-  }
+  {super (props);
+  
+    this.handleCreateClick = this.handleCreateClick.bind(this);
+
+    }
+    
     state={
-    Name:'', 
-    Email:'', 
-    Password:'', 
-    Password2:'', 
-    redirectToHome:false, 
-    error:[], 
-    name_error:'', //Store name error message
-    email_error:'', //Store email error message 
-    password_error:'', //Store password error message
-    password2_error:''   //Store password2 error message  
+      Name:'', 
+      Email:'', 
+      Password:'', 
+      Password2:'', 
+      redirectToHome:false, 
+      error:[], 
+      name_error:'', //Store name error message
+      email_error:'', //Store email error message 
+      password_error:'', //Store password error message
+      password2_error:''   //Store password2 error message
+  
   };
-   handleRegister(event){
+
+
+    handleCreateClick(event) {
+
   // alert(this.state.Name)
   // alert(this.state.Email)
   // alert(this.state.Password)
@@ -154,7 +162,7 @@ this.setState({Password2:event.target.value
   </div>
   <br/>
   <div style={{marginTop:'2%'}}>
-  <Button variant='contained' colour='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Create</Button>
+  <Button variant='contained' colour='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleCreateClick(event) }}>Create</Button>
   <Link to={{ pathname: "/" }}><Button variant='contained' colour='primary'>Cancel</Button></Link>
   
   </div>
