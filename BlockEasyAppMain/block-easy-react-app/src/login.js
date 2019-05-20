@@ -10,6 +10,10 @@ var img = require("./images/blockeasylogo2.png");
 class Login extends Component {
 constructor (props)
 {super (props)
+
+  //Register methods or bind them.
+  this.handleUsernameChange = this.handleUsernameChange.bind(this);
+  this.handlePasswordChange = this.handlePasswordChange.bind(this);
 }
 state={
   Username:'', 
@@ -18,11 +22,29 @@ state={
   error:[], 
   password_error:'', //Store password error message
   username_error:''//Store username error message
-};  
 
+}; 
+
+
+
+ 
+handleUsernameChange(event) {
+  this.setState({username: event.target.value});
+}
+/**
+* This method handles changes in the password 
+* @param {*} event 
+*/
+handlePasswordChange(event) {
+  this.setState({password: event.target.value});
+}
+  /**
+ * This method redirects user to the create window, once clicked.
+ * @param {*} event 
+ */
 
  handleRegister(event){
-  event.preventDefault()
+  event.stopPropagation()
   //To store the errors
   const errors={}
   var re =  new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);

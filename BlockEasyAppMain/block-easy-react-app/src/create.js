@@ -25,7 +25,7 @@ class Create extends Component {
   // alert(this.state.Email)
   // alert(this.state.Password)
   // alert(this.state.Password2)
-  event.stopPropagation()
+  event.preventDefault()
   //To store the errors
   const errors={}
   var nameVer =  new RegExp(/[a-zA-Z]$/);
@@ -156,6 +156,7 @@ this.setState({Password2:event.target.value
   <div style={{marginTop:'2%'}}>
   <Button variant='contained' colour='primary' style={{marginRight:'2%'}} onClick={(event) => { this.handleRegister(event) }}>Create</Button>
   <Link to={{ pathname: "/" }}><Button variant='contained' colour='primary'>Cancel</Button></Link>
+  
   </div>
 </center>
 </MuiThemeProvider>
